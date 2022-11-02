@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inner {
+            background-color: red;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* 多个 container-type 时，后面会覆盖前面的 */
+        .container {
+            container-type: normal;
+            container-name: asd;
+        }
+        .container {
+            container-type: inline-size;
+            container-name: box;
+        }
+
+        .container {
+            width: 200px;
+            height: 100px;
+        }
+
+        @container box (width: 200px) {
+            .inner {
+                background-color: blue;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inner {
+            background-color: red;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            /* 
+                需要设置 container-type 属性才会生效
+                    inline-size: 只在水平方向建立
+                    size: 水平垂直都建立
+                    normal: 默认值 不建立容器元素
+            */
+            container-type: inline-size;
+            container-name: box;
+
+            /* 
+                container 属性是 container-type container-name 的缩写
+                container: container-type container-name;
+            */
+            /* TODO 不清楚什么原因，chrome beta 108 现不支持缩写 */
+            /* container: inline-size box; */
+        }
+
+        .container {
+            width: 200px;
+            height: 100px;
+        }
+
+        @container box (width: 200px) {
+            .inner {
+                background-color: blue;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 无 layer 规则 优先级最高 */
+        div {
+            background-color: aqua
+        }
+
+        /* 指定层级关系，在后面的优先级高 */
+        @layer base, override;
+        @layer base {
+            div {
+                width: 20px;
+                height: 20px;
+                background-color: brown;
+            }
+        }
+        @layer override {
+            div {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inner-a {
+            background-color: red;
+            height: 100%;
+            width: 100%;
+        }
+
+        .inner-b {
+            background-color: green;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container-a {
+            container-type: inline-size;
+            container-name: boxa;
+        }
+
+        .container-b {
+            container-type: inline-size;
+            container-name: boxb;
+        }
+
+        .container {
+            width: 200px;
+            height: 100px;
+        }
+
+        /* 没有 container-name 的 at-rule 会启用所有 container-name */
+        @container (width: 200px) {
+            .inner-a {
+                background-color: blue;
+            }
+            .inner-b {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-a">
+        <div class="inner-a"></div>
+    </div>
+
+    <div class="container container-b">
+        <div class="inner-b"></div>
+    </div>
+</body>
+</html>
