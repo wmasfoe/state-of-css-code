@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            wiki hwb 色彩空间: https://zh.wikipedia.org/wiki/HWB%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4
+        */
+        .container {
+            width: 100px;
+            height: 100px;
+            /* 
+                hwb(色盘角度, white百分比, black百分比)
+
+                参考：
+                 角度是什么(mdn)：https://developer.mozilla.org/zh-CN/docs/Web/CSS/angle
+                 色盘是什么(adobe)：https://color.adobe.com/zh/create   
+            */
+            background-color: hwb(30deg 0% 30%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container div {
+        width: 100px;
+        margin: 10px 0;
+        height: 20px;
+      }
+      /* 
+        mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+        当前 chrome beta 108 不支持
+        firefox 需要手动开启 about:config -> color-mix
+      */
+      .container div:nth-child(1) {
+        /* 
+          语法：
+            color-mix(颜色空间, 颜色 <百分比>, 颜色 <百分比>)
+            !! 只支持两个颜色
+            多个颜色混入可以嵌套 color-mix
+        */
+        background-color: color-mix(in srgb, #34c9eb 10%, white 30%);
+      }
+
+      .container div:nth-child(2) {
+        background-color: color-mix(in srgb, #34c9eb 40%, white);
+      }
+
+      .container div:nth-child(3) {
+        background-color: color-mix(in srgb, #34c9eb 70%, white);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
