@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="www.baidu.com">
+            无 inert
+        </a>
+    </div>
+    <!-- 
+        带有 inert 属性的 html 当前元素及其子元素无法被选中 focus hover
+     -->
+    <div inert>
+        <a href="www.toutiao.com">
+            有 inert
+        </a>
+    </div>
+    <a inert href="www.xiaohongshu.com">
+        自身有 inert
+    </a>
+</body>
+</html>
